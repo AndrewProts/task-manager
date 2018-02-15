@@ -12,7 +12,6 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 
 var router = new VueRouter({
-  mode: 'history',
   routes:[
     {path: '/', component: MainComponent},
     {path: '/register', component: RegisterComponent},
@@ -29,13 +28,13 @@ new Vue({
   },
   methods:{
     getUsers: function () {
-      this.$http.get(this.server+'secret_page').then(function (response) {
-        console.log(response);
-        this.temp.message = response.body.message;
-      },function (err) {
-        console.log(err);
-        this.temp.message = err.body.message;
-      });
+      // this.$http.get(this.server+'secret_page').then(function (response) {
+      //   console.log(response);
+      //   this.temp.message = response.body.message;
+      // },function (err) {
+      //   console.log(err);
+      //   this.temp.message = err.body.message;
+      // });
     }
   },
   created: function () {

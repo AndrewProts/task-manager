@@ -23,6 +23,7 @@
 import temp from '../controlers/temp'
 import users from '../controlers/users'
 import user from '../controlers/user'
+import tasks from '../controlers/tasks'
 
 export default {
   data:function () {
@@ -33,7 +34,8 @@ export default {
       err1:false,
       err2:false,
       err3:false,
-      addImg: false
+      addImg: false,
+      tasks: tasks
     }
   },
   methods:{
@@ -63,6 +65,9 @@ export default {
               this.user.img = this.tempUser.img;
               this.users.push({login:this.tempUser.login,password:this.tempUser.password,img:this.tempUser.img});
             }
+            let taskName = this.tempUser.login;
+            this.tasks[taskName] = []
+            console.log(this.tasks);
             this.$router.push('/');
             return;
           }
